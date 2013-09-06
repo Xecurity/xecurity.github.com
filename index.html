@@ -30,9 +30,24 @@
                 <td>
                     Our website is still under construction. Please visit later.<br />
                     <br />
-                    <a href="mailto:fan@xecurity.ca">Or you can directly contact us by email.</a>
+                    <span id='target'><a href="mailto:fan@xecurity.ca">Or you can directly contact us by email.</a></span>
                 </td>
             </tr>
         </table>
     </body>
+    <script type="text/javascript">
+        function Caesar_decrypt(cipher) {
+            var plain = "";
+            for (var i = 0; i < cipher.length; i++)
+                plain += String.fromCharCode(cipher.charCodeAt(i) - 3);
+            return plain;
+        }
+
+        (function() {
+            var ciphertext = 'idqC{hfxulw|1fd;
+            var plaintext = Caesar_decrypt(ciphertext);
+            document.getElementById('target').innerHTML = '<a target="_blank" href="mailto:' + plaintext + '">Or you can directly contact us by email.<\/a>';
+        }());
+</script>
+
 </html>
